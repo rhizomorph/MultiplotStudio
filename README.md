@@ -1,3 +1,5 @@
+Executable found in /bin/MultiplotStudio.zip. Download, extract and double-click MultiplotStudio.jar (Requires Java 8)
+
 # MultiplotStudio
 
 This is a complete replacement for Multiplot, originally implemented as a GenePattern module (now a standalone desktop app). It has been completely rewritten from the ground up. See preview documentation for further description.
