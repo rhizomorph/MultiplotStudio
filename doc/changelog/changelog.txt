@@ -9,6 +9,11 @@ Polygon mouse selection acts a little strange at times (disabled until resolved)
  DEVELOPMENT HISTORY
 ■■■■■■■■■■■■■■■■■■■■■
 
+VERSION 1.5.65 - Oct 3, 2018
+====================
+FIXED   Small error in pooled standard deviation
+
+
 VERSION 1.5.63 - June 13, 2018
 ====================
 ADDED   Effect Size calculation (Hedges' g)
