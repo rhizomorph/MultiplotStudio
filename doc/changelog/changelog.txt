@@ -1,0 +1,207 @@
+■■■■■■■■■■■■■■■■■■■■■
+ KNOWN ISSUES
+■■■■■■■■■■■■■■■■■■■■■
+
+Polygon mouse selection acts a little strange at times (disabled until resolved).
+
+
+■■■■■■■■■■■■■■■■■■■■■
+ DEVELOPMENT HISTORY
+■■■■■■■■■■■■■■■■■■■■■
+
+VERSION 1.5.1 - Jan 27, 2022
+====================
+FIXED   Incompatibility with Java 9+ (updated JAXB library, refactored code).
+MOD     Removed 4 plot limit, switched grid layout logic to use TileLayout.
+
+
+VERSION 1.5.65 - Oct 3, 2018
+====================
+FIXED   Small error in pooled standard deviation
+
+
+VERSION 1.5.63 - June 13, 2018
+====================
+ADDED   Effect Size calculation (Hedges' g)
+FIXED   Small error in pooled standard deviation
+
+
+VERSION 1.5.61 - September 1, 2017
+====================
+FIXED   Error trying to zoom a selection from right to left
+FIXED   Auto-link axes operand values for pre-defined plot types.
+
+
+VERSION 1.5.5x - March 30, 2016
+====================
+FIXED   Java 8 incompatibilities (should no longer use with Java 7!).
+FIXED   Error: opening highlight/filter editor after loading new data file.
+FIXED   Error: Zooming on a region with mouse; selecting from right-to-left on logarithmic plot.
+FIXED   Improved axis labels on log plots.
+ADDED   Some additional calculation scopes.
+MOD     General performance optimizations.
+
+
+VERSION 1.5.20 - July 8, 2014
+====================
+FIXED   Several bugs related to the data browser/heatmap.
+FIXED   IDs with commas and spaces can now be used in ID-based filters/highlights.
+FIXED   Update density calculation to be based on only those probes that are currently visible after applying all active filters.
+FIXED   Various bugs/glitches related to creation and editing of highlights/filters.
+ADDED   Added histogram plot to highlight/filter editor.
+ADDED   Export (copy/save) rank & histogram distribution plots via right-click.
+ADDED   Summary of number of missing values for a given calculation criterion in highlight editor.
+ADDED   Export current data from heatmap to CSV.
+ADDED   Some additional calculation scopes.
+MOD     General performance optimizations.
+MOD     A bunch of other stuff.
+
+
+VERSION 1.1.0 - April 16, 2014
+====================
+VERSION 1.1: first official public release.
+FIXED   Highlights with 0 members are no longer listed in plot's legend.
+FIXED   P-value multiple tests adjustment parameter reintroduced.
+ADDED   Cardinality calculation - used for sparse (mostly 0s) and ragged (missing values/NaNs) datasets. Quantifies how many replicates within a class have values (as a count or as a percentage).
+ADDED   Parameter for Expression calculation (which is now called Value) to specify whether or not NaN values are ignored when calculating class/multi-class means.
+ADDED   Multi-class Min as new scope for calculations Value and Cardinality.
+ADDED   Ability to toggle between applying filters as intersection OR union.
+ADDED   Ability to hide inactive filters and highlights.
+ADDED   Ability to sort columns in data browser by cardinality (if working with ragged or possibly sparse matrix).
+ADDED   Load any data or class file via Drag-N-Drop onto desktop.
+MOD     Improved highlight/filter reordering - now uses row drag-n-drop.
+MOD     Changed default h/f behavior - new items are only activated for the current plot.
+MOD     Converting between h->f now retains original activation state.
+MOD     Data browser layout made more compact.
+
+
+Mar/27/2014
+====================
+FIXED   Bug in which Add New Criterion button remained disabled if the current criterion was an ID match (preventing ID matches to be combined with any other criteria in the same list).
+FIXED   Text annotations corresponding to points that have been filtered out were still being displayed.
+ADDED   Ability to sort the columns of the heatmap table by: 1) column name or 2) the value of a selected row.
+ADDED   Ability to specify an ID-based list as inclusive or exclusive (i.e. include all, exclude all).
+
+
+Mar/24/2014
+====================
+FIXED   Error in which highlights/filters created from non-file-based sources (i.e. user entered or from selection) when the probe ID contained lower case letters would return no hits.
+MOD     Internal: several threading issues addressed to avoid possible race conditions and asynchronous glitches.
+MOD     Changed default sample/population selection behavior - now, nothing is selected by default, user is explicitly asked which samples to include. Also, a CLS is loaded after samples are selected, the same populations will be reselected after loading class file.
+MOD     Removed "adjustment" parameter for Pvalue until better worked out.
+
+
+Mar/18/2014
+====================
+FIXED   Performance optimizations.
+MOD     Internal: changed sort algorithm from QuickSort to HeapSort due to stack overflow with very large arrays containing many duplicate values (e.g. a pvalue with several thousand probes equal to 1).
+
+
+Mar/13/2014
+====================
+MOD     Revamped interval slider in Filter/Highlights dialog: 1) added ability to define open/closed intervals, 2) fixed issue where users could slide boundaries past east other, 3) significantly optimized performance.
+FIXED   Parsing error for certain non-numeric data columns in a CSV file.
+FIXED   Density calculation (advanced shading) misinterpreting axis scale for Pvalues.
+
+
+Feb/14/2014
+====================
+ADDED   Diagonal FC guide lines on Expression/Expression plots.
+ADDED   Calculation scope "N-class Max" to several calculations.
+MOD     Completely revamped heatmap table: 1) switch between numerical values and heatmap 2) choose between multiple color scales 3) inclusion of additional text data (for CSV files) 4) export as PNG/SVG.
+FIXED   Filters/highlights not properly updating after being reordered.
+FIXED   Bug related to changing a sample's data type when no CLS file has been specified.
+FIXED   Various UI bugs.
+
+
+Jan/23/2014
+====================
+ADDED   Implemented sample/population selection options.
+ADDED   Support for CSV data files with additional annotation columns (assumes presence of header row!).
+ADDED   Data Type specification for all samples/populations. This allows Multiplot Studio to calculate the appropriate class means and choose an appropriate default axis scale.
+ADDED   Summary table with ability show additional annotation columns present in CSV.
+
+
+Jan/06/2014
+====================
+FIXED   Removed "-XX:+AggresiveOpts" from default JVM command line options due to minor bug wherein auto-zoom and fold change formats were broken on certain machines.
+
+
+Dec/20/2013
+====================
+Initial GPARC release.
+
+
+Dec/19/2013
+====================
+ADDED   X/Y values to data point tooltips.
+MOD     Minor UI changes.
+FIXED   Minor bug fixes.
+FIXED   Plot axes, axis limit text fields, and summary table data not refreshing after changing log2 ratio format.
+
+
+Dec/17/2013
+====================
+ADDED   Splash screen
+ADDED   Use of settings file for specifying JVM options.
+ADDED   Ability to clone an existing highlight/filter.
+ADDED   Multiple selection of highlights/filters for batch operations (e.g. move up/down, delete, enable/disable)
+ADDED   New calculation: δ-factor (see Immgen Delta Score).
+ADDED   New predefined plot type - Pineapple plot.
+ADDED   Implemented "Two-class Avg" calculation scope option for: Standard Deviation, Variance and CV.
+ADDED   Additional plot customization options (show/hide legend).
+ADDED   Various options for exporting data in the summary table.
+ADDED   Save As option for workspace.
+ADDED   Options to change global log2 ratio format.
+MOD     Workspace save/save as behavior.
+MOD     Data import behavior (single file dialog for GCT and MSDATA files).
+MOD     Copy/Save behavior for plot images (title is only included if it's currently being shown).
+MOD     Performance optimization of Quick Search function.
+MOD     Performance optimization of plot repainting in response to highlight modifications.
+MOD     Performance optimization in resizing plots (temporarily deactivating antialiasing while being resized).
+FIXED   Critical error with calculation parameters not being saved.
+FIXED   Temp folders not being deleted.
+
+
+Nov/12/2013
+====================
+MOD     Replaced color chooser.
+
+
+Nov/11/2013
+====================
+FIXED   Issue where some annotations would disappear.
+FIXED   Issue with annotations being unselected if attempting to customize a group of annotations by right-clicking if Shift wasnt being pressed (Shift should not be necessary if the right-click was done on one of the selected annotations).
+
+
+Nov/8/2013
+====================
+ADDED   Copy values in summary table - Ctrl-C to copy unmodified values, or Shift-Ctrl-C to copy formatted values (e.g. for fold changes).
+ADDED   Quick search function. Easily create a highlight from an on-the-fly user search.
+ADDED   SVG export now available. Does not yet correctly render gradient legends for plots using advanced shading.
+MOD     Plot data dialog is no longer modal (i.e. user can interact with main desktop while dialog is still open).
+
+
+Nov/5/2013
+====================
+MOD     Enable/disable behavior of filters and highlights. Now, global activation is the default, single plot activation is accessible via popup menu. This is the oppisite of prior behavior.
+MOD     Performance enhancement related to global enable/disabling of filters & highlights.
+FIXED   Critical issues related save/restore feature.
+FIXED   Critical plot/filter/highlight synchronization issues.
+FIXED   Some minor bugs related to polygon selection mouse mode.
+FIXED   Input field for probeIDs/Gene Symbols still showing "*" and preventing Save even after data has been input to that field.
+FIXED   Intensity shading gradient not restored on plot edit.
+
+
+Nov/1/2013
+====================
+ADDED   Save/restore entire workspace!!!
+FIXED   parameters not persisting in highlight/filter criteria
+FIXED   ANOVA operands not persisting in plot data dialog
+FIXED   Selections grabbing wrong data points if a filter is being applied
+FIXED   Email feedback formatting corruption if "\n" was in the first 100 characters of message
+FXIED	Various minor glitches
+
+Oct/23/2013
+====================
+Initial limited beta release.

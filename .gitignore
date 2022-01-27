@@ -1,0 +1,8 @@
+*.bat
+**/build/
+**/dist/
+**/edit/
+**/ext/
+**/icons/
+**/nbproject/
+**/src*/
